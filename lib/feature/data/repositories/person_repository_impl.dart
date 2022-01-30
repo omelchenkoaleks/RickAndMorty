@@ -25,14 +25,14 @@ class PersonRepositoryImpl extends PersonRepository {
   });
 
   @override
-  Future<Either<Failure, List<PesonEntity>>> getAllPersons(int page) async {
+  Future<Either<Failure, List<PersonEntity>>> getAllPersons(int page) async {
     return await _getPersons(() {
       return remoteDataSource.getAllPersons(page);
     });
   }
 
   @override
-  Future<Either<Failure, List<PesonEntity>>> searchPerson(String query) async {
+  Future<Either<Failure, List<PersonEntity>>> searchPerson(String query) async {
     return await _getPersons(() {
       return remoteDataSource.searchPeson(query);
     });

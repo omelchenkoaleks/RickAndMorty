@@ -14,7 +14,7 @@ class PersonEmpty extends PersonSearchState {}
 class PersonSearchLoading extends PersonSearchState {}
 
 class PersonSearchLoaded extends PersonSearchState {
-  final List<PesonEntity> pesons;
+  final List<PersonEntity> pesons;
 
   PersonSearchLoaded({this.pesons});
 

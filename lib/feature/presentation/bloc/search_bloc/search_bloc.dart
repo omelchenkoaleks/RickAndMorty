@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/core/error/failure.dart';
 import 'package:rick_and_morty/feature/domain/usecases/search_person.dart';
+import 'package:rick_and_morty/feature/presentation/bloc/person_list_cubit/person_list_cubit.dart';
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_event.dart';
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_state.dart';
 
@@ -31,9 +32,9 @@ class PersonSerchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
-        return 'Server Failure';
+        return serverFailureMessage;
       case CacheFailure:
-        return 'Cache Failure';
+        return cachedFailureMessage;
       default:
         return 'Unexpected Error';
     }

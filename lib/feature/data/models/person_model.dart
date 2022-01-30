@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:rick_and_morty/feature/data/models/location_model.dart';
 import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 
-class PersonModel extends PesonEntity {
+class PersonModel extends PersonEntity {
   PersonModel(
       {@required id,
       @required name,

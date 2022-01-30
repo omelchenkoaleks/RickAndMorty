@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-class PesonEntity extends Equatable {
+class PersonEntity extends Equatable {
   final int id;
   final String name;
   final String status;
@@ -14,7 +14,7 @@ class PesonEntity extends Equatable {
   final List<String> episode;
   final DateTime created;
 
-  const PesonEntity(
+  const PersonEntity(
       {@required this.id,
       @required this.name,
       @required this.status,
