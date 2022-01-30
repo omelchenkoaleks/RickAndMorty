@@ -6,10 +6,10 @@ import 'package:rick_and_morty/feature/presentation/bloc/person_list_cubit/perso
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_event.dart';
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc/search_state.dart';
 
-class PersonSerchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
+class PersonSearchBloc extends Bloc<PersonSearchEvent, PersonSearchState> {
   final SearchPerson searchPerson;
 
-  PersonSerchBloc({@required this.searchPerson}) : super(PersonEmpty());
+  PersonSearchBloc({@required this.searchPerson}) : super(PersonEmpty());
 
   @override
   Stream<PersonSearchState> mapEventToState(PersonSearchEvent event) async* {

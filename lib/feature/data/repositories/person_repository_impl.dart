@@ -46,7 +46,7 @@ class PersonRepositoryImpl extends PersonRepository {
         localDataSource.personsToCache(remotePerson);
         return Right(remotePerson);
       } on ServerException {
-        return Left(SeverFailure());
+        return Left(ServerFailure());
       }
     } else {
       try {
