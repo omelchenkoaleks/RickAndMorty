@@ -11,6 +11,7 @@ class GetAllPersons extends UseCase<List<PersonEntity>, PagePersonParams> {
 
   GetAllPersons(this.personRepository);
 
+  @override
   Future<Either<Failure, List<PersonEntity>>> call(
       PagePersonParams params) async {
     return await personRepository.getAllPersons(params.page);

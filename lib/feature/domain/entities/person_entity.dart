@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 
 class PersonEntity extends Equatable {
   final int id;
@@ -8,24 +8,25 @@ class PersonEntity extends Equatable {
   final String species;
   final String type;
   final String gender;
-  final LocatonEntity origin;
-  final LocatonEntity location;
+  final LocationEntity origin;
+  final LocationEntity location;
   final String image;
   final List<String> episode;
   final DateTime created;
 
-  const PersonEntity(
-      {@required this.id,
-      @required this.name,
-      @required this.status,
-      @required this.species,
-      @required this.type,
-      @required this.gender,
-      @required this.origin,
-      @required this.location,
-      @required this.image,
-      @required this.episode,
-      @required this.created});
+  const PersonEntity({
+    @required this.id,
+    @required this.name,
+    @required this.status,
+    @required this.species,
+    @required this.type,
+    @required this.gender,
+    @required this.origin,
+    @required this.location,
+    @required this.image,
+    @required this.episode,
+    @required this.created,
+  });
 
   @override
   List<Object> get props => [
@@ -39,13 +40,13 @@ class PersonEntity extends Equatable {
         location,
         image,
         episode,
-        created
+        created,
       ];
 }
 
-class LocatonEntity {
+class LocationEntity {
   final String name;
   final String url;
 
-  const LocatonEntity({this.name, this.url});
+  const LocationEntity({this.name, this.url});
 }

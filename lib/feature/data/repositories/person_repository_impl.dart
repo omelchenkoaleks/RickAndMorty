@@ -1,5 +1,3 @@
-// Содержит реализацию методов,
-//которые обьявлены в репозитории на уровне данных:
 import 'package:flutter/foundation.dart';
 import 'package:rick_and_morty/core/error/exception.dart';
 import 'package:rick_and_morty/core/platform/network_info.dart';
@@ -10,10 +8,9 @@ import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 import 'package:rick_and_morty/core/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:rick_and_morty/feature/domain/repositories/person_repository.dart';
+import 'package:meta/meta.dart';
 
-// Содержит реализацию методов,
-// которые обьявлены в репозитории на уровне данных:
-class PersonRepositoryImpl extends PersonRepository {
+class PersonRepositoryImpl implements PersonRepository {
   final PersonRemoteDataSource remoteDataSource;
   final PersonLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
@@ -34,7 +31,7 @@ class PersonRepositoryImpl extends PersonRepository {
   @override
   Future<Either<Failure, List<PersonEntity>>> searchPerson(String query) async {
     return await _getPersons(() {
-      return remoteDataSource.searchPeson(query);
+      return remoteDataSource.searchPerson(query);
     });
   }
 
@@ -50,8 +47,8 @@ class PersonRepositoryImpl extends PersonRepository {
       }
     } else {
       try {
-        final locationPerson = await localDataSource.getLastPesonsFromCache();
-        return Right(locationPerson);
+        final localPerson = await localDataSource.getLastPersonsFromCache();
+        return Right(localPerson);
       } on CacheException {
         return Left(CacheFailure());
       }

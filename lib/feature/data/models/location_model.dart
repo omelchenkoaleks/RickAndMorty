@@ -1,6 +1,6 @@
 import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 
-class LocationModel extends LocatonEntity {
+class LocationModel extends LocationEntity {
   LocationModel({name, url}) : super(name: name, url: url);
 
   factory LocationModel.fromJson(Map<String, dynamic> json) {

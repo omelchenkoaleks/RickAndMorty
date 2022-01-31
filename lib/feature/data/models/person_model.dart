@@ -3,19 +3,19 @@ import 'package:rick_and_morty/feature/data/models/location_model.dart';
 import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 
 class PersonModel extends PersonEntity {
-  PersonModel(
-      {@required id,
-      @required name,
-      @required status,
-      @required species,
-      @required type,
-      @required gender,
-      @required origin,
-      @required location,
-      @required image,
-      @required episode,
-      @required created})
-      : super(
+  PersonModel({
+    @required id,
+    @required name,
+    @required status,
+    @required species,
+    @required type,
+    @required gender,
+    @required origin,
+    @required location,
+    @required image,
+    @required episode,
+    @required created,
+  }) : super(
           id: id,
           name: name,
           status: status,
@@ -37,8 +37,9 @@ class PersonModel extends PersonEntity {
       species: json['species'],
       type: json['type'],
       gender: json['gender'],
-      origin:
-          json['origin'] != null ? LocationModel.fromJson(json['orgin']) : null,
+      origin: json['origin'] != null
+          ? LocationModel.fromJson(json['origin'])
+          : null,
       location: json['location'] != null
           ? LocationModel.fromJson(json['location'])
           : null,
